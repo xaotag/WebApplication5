@@ -64,5 +64,22 @@ namespace WebApplication5
 
 
         }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CheckBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckBox2.Checked)
+            {
+                CheckBox1.Checked=true;
+            }
+            else
+            {
+                CheckBox1.Checked=false;
+            }
+        }
     }
 }
