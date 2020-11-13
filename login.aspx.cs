@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -35,7 +36,10 @@ namespace WebApplication5
                     Response.Redirect("OrderList.aspx");
                 }
                 Response.Write("<script>alert('账号或密码错误')<script>");
+                Session["StaffID"]= ds.Tables[0].Rows[0]["StafffID"].ToString();
+
             }
+            
             
             /*
              后面有用
@@ -47,7 +51,7 @@ namespace WebApplication5
                 UserModel m
                     odel = new UserModel();
                 foreach (DataColumn column in ds.Tables[0].Columns)
-               ，8  {
+                {
                     switch (column.ColumnName)
                     {
                         case "StaffID":
